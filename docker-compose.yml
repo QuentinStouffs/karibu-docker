@@ -22,6 +22,13 @@ services:
     ports:
       - "8000:8000"
     restart: always
+    environment:
+      - MYSQL_DATABASE=mysql-db
+      - MYSQL_USER=mysql-user
+      - MYSQL_PASSWORD=mysql-password
+      - MYSQL_ROOT_PASSWORD=mysql-root-password
+      - MYSQL_DATABASE_HOST=mysql-db
+      - MYSQL_DATABASE_PORT=3306
     depends_on:
       - db
     entrypoint: /entrypoint.sh
